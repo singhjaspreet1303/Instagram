@@ -64,4 +64,17 @@ public class AuthManager {
         }
     }
     
+    /// Attempt to logout firebase user
+    public func logout(completion: @escaping (Bool) -> Void) {
+        do {
+            try Auth.auth().signOut()
+            completion(true)
+            return
+        } catch {
+            print(error)
+            completion(false)
+            return
+        }
+    }
+    
 }

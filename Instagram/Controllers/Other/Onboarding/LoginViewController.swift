@@ -205,10 +205,10 @@ extension LoginViewController {
         
         if userNameEmail.contains("@"), userNameEmail.contains(".") {
             // email
-            userName = userNameEmail
+            email = userNameEmail
         } else {
             // userName
-            email = userNameEmail
+            userName = userNameEmail
         }
         
         AuthManager.shared.loginUser(userName: userName, email: email, password: password) {  [weak self] success in
